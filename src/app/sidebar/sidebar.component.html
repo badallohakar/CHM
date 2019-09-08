@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 header">
+          <img src="../assets/logo1.png" class="logoimg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2 menulist">
+                    <ul>
+                      <li  [routerLinkActive]="['active']" [routerLink]="['/sidebar/employeelist']">Employee List</li>
+                      <li data-toggle="modal" data-target="#myModal">Add Employee</li>
+                      <li [routerLink]="['/login']">Log-Out</li>
+                    </ul>
+                </div>
+                <div class="col-md-10 menuoutput">
+                    <div class="container">
+                        <!-- Button to Open the Modal -->
+                        
+                      
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                            
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title">Add New Employee</h4>
+                                <button type="button" class="close" (click)="resetformd()" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                              <!-- Modal body -->
+                              <form [formGroup]="addEmployee" (ngSubmit)="postData(addEmployee)">
+                              <div class="modal-body">
+                                  <table class="ctable">
+                                        <tr>
+                                          
+                                            <td colspan="2">
+                                                <div class="form-group">
+                                              <input type="name"  class="inputfileds"
+                                              placeholder="Enter Employee Name"
+                                              
+                                              formControlName="name" >
+                                            </div>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">{{namestatus}}</td>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td>
+                                                <div class="form-group">
+                                              <input type="number" 
+                                              placeholder="Enter Employee Age"
+                                              formControlName="age"
+                                              class="inputfileds" required="required">
+                                            </div>
+                                            </td> 
+                                           
+                                           
+                                              <td>
+                                                  <div class="form-group">
+                                              <input type="number" class="inputfileds"
+                                              formControlName="salary"
+                                              placeholder="Enter Employee Salary"  required="required">
+                                            </div>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>{{agestatus}}</td>
+                                            <td>{{salarystatus}}</td>
+                                        </tr>
+                                  
+                                    </table>
+                              </div>
+                            
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <input type="submit" [disabled]='!addEmployee.valid' class="info" value="Add">
+                              </div>
+                            </form>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                  
+                    <router-outlet></router-outlet>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+

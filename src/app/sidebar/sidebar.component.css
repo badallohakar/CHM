@@ -1,0 +1,86 @@
+.menulist{
+    background: #c3d62f;
+    border-top: 2px solid #fff;
+    border-right: 1px solid white;
+}
+.header{
+    background: #c3d62f;
+    padding:10px 0px 10px 0px;
+    border-bottom: 2px solid #383a35;
+}
+.logoimg{
+    background: white;
+    margin-left: 10px;
+}
+.menuoutput{
+    background: #fff;
+    border-left: 1px solid white;
+    border-top: 2px solid #fff;
+}
+ul li{
+    list-style-type: none;
+    
+}
+ul{
+    padding-inline-start: 0px;
+}
+li{
+    margin-top:10px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+}
+li:hover{
+    margin-top:8px;
+    color: antiquewhite;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    
+    box-shadow: 3px 3px 2px 0px #283e0a;
+    border-right: 2px solid white;
+    cursor: pointer;
+    background: #4f595a;    
+}
+.active{
+    margin-top:8px;
+    color: antiquewhite;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    
+    box-shadow: 3px 3px 2px 0px #283e0a;
+    border-right: 2px solid white;
+    cursor: pointer;
+    background: #4f595a;     
+}
+.inputfileds{
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+}
+.ctable{
+    width: 100%;
+}
+.info{
+    font-size: 14px;
+    background: #4f595a;
+    border: none;
+    padding: 2px 8px 2px 8px;
+    color: #fff;
+    cursor: pointer
+}
+.info:hover{
+    font-size: 14px;
+    background: #c3d62f;
+    border: none;
+    color: #4f595a;
+    border: none;
+    padding: 2px 8px 2px 8px;
+    box-shadow: 0px 4px 4px 1px #b1babb;
+    cursor: pointer
+}
+input.ng-invalid.ng-touched{
+    border:2px solid red;
+}

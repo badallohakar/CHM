@@ -1,0 +1,53 @@
+.wrapperlogin{
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/back1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+.loginparent{
+    
+    width: 450px;
+    height: 400px;
+    background-color: #2f3e258c;
+    border-radius: 35px 0px 35px 0px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+.text-center h2{
+    color:white;
+}
+.loginparameter{
+    width: 80%;
+    height: 80%;
+   margin: auto;
+   margin-top: 80px;
+}
+.mtop{
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.custombtn{
+    width: 48%;
+    height: auto;
+    border: 1px solid white;
+    color: white;
+    margin-left: 4px;   
+}
+.custombtn:hover{
+    background: #3d3e39c4;
+    transition: background 0.5s, color 0.5s, border 0.5s;
+    border: 1px solid #3d3e39c4;
+    color: white;
+}
+.resstatus{
+    color:#d0fffb;
+    margin-top: 15px;
+   
+}

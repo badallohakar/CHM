@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-md-12">
+      <div class="container">
+          <!-- Button to Open the Modal -->
+          
+        
+          <!-- The Modal -->
+          <div class="modal fade" id="myModal1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Update Employee Details</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <table class="ctable">
+                          <tr>
+                              <td colspan="2"><input type="name" class="inputfileds"
+                                placeholder="Enter Employee Name"
+                                ></td>
+                          </tr>
+                          <tr>
+                              <td colspan="2"><span></span></td>
+                          </tr>
+                          <tr>
+                              <td><input type="name" 
+                                placeholder="Enter Employee Age" class="inputfileds"></td> 
+                              <td>
+                                <input type="name" class="inputfileds"
+                                placeholder="Enter Employee Salary"></td>
+                          </tr>
+                          <tr>
+                              <td><span></span></td>
+                              <td><span></span></td>
+                          </tr>
+                         
+                        
+                        <tbody>
+                          
+                        </tbody>
+                      </table>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="info" data-dismiss="modal">Update</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      <br>
+      <div class="card">
+          <div class="card-body">
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Employee Profile </th>
+                      <th colspan="2">
+                          <button type="button" class="info" data-toggle="modal" data-target="#myModal1">Update</button>&nbsp;&nbsp;
+                          <button type="button" class="delete">X</button>
+                      </th>
+                    </tr>
+                  </thead>
+                    <tr>
+                        <td>Employee Name </td> 
+                        <td>:</td>
+                        <td>{{ResultEmployeeDetails.employee_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Employee Salary </td> 
+                        <td>:</td>
+                        <td>{{ResultEmployeeDetails.employee_salary}}</td>
+                    </tr>
+                    <tr>
+                        <td>Employee Age </td> 
+                        <td>:</td>
+                        <td>{{ResultEmployeeDetails.employee_age}}</td>
+                    </tr>
+                  
+                  <tbody>
+                    
+                  </tbody>
+                </table>
+          </div>
+        </div>
+  </div>
+</div>

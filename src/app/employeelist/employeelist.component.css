@@ -1,0 +1,74 @@
+.info{
+    font-size: 14px;
+    background: #4f595a;
+    border: none;
+    padding: 2px 8px 2px 8px;
+    color: #fff;
+    cursor: pointer
+}
+.info:hover{
+    font-size: 14px;
+    background: #c3d62f;
+    border: none;
+    color: #4f595a;
+    border: none;
+    padding: 2px 8px 2px 8px;
+    box-shadow: 0px 4px 4px 1px #b1babb;
+    cursor: pointer
+}
+
+.delete{
+    background: #4f595a;
+    color: white;
+    border: none;
+    font-size: 14px;
+    line-height: 22px;
+}
+.delete:hover{
+    background: #bd0c0c;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px 1px #b1babb;
+}
+
+.active{
+    font-size: 14px;
+    background: #c3d62f;
+    border: none;
+    color: #4f595a;
+    border: none;
+    padding: 2px 8px 2px 8px;
+    box-shadow: 0px 4px 4px 1px #b1babb;
+    cursor: pointer
+}
+.delete{
+    background: #4f595a;
+    color: white;
+    border: none;
+    font-size: 14px;
+    line-height: 22px;
+}
+.delete:hover{
+    background: #bd0c0c;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px 1px #b1babb;
+}
+.cthead{
+    background: #c3d62f;
+    border: none;
+    color: #4f595a;
+}
+.inputfileds{
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+}
+.ctable{
+    width: 100%;
+}
+.scrolllength{
+    height: 500px;
+    overflow: scroll;
+}
+input.ng-invalid.ng-touched{
+    border:2px solid red;
+}
