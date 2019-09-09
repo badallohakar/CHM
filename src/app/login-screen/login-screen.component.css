@@ -7,7 +7,6 @@
     position: absolute;
 }
 .loginparent{
-    
     width: 450px;
     height: 400px;
     background-color: #2f3e258c;
@@ -17,7 +16,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-
     margin: auto;
 }
 .text-center h2{

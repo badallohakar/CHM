@@ -10,11 +10,12 @@ export class EmployeeDataServiceService {
     url:string = "http://dummy.restapiexample.com/";
     selectedEmployeeDetails:any = new Array();
    flag:number = 0;
+
   constructor(private http:HttpClient) { }
 
   getEmployeeLists():Observable<any[]>{
     
-    return this.http.get<any[]>("http://dummy.restapiexample.com/api/v1/employees");
+    return this.http.get<any[]>(this.url+"/api/v1/employees");
 
   }
 
@@ -31,18 +32,18 @@ export class EmployeeDataServiceService {
 
   deleteThisId(id:number):Observable<any[]>{
 
-return this.http.delete<any[]>("http://dummy.restapiexample.com/api/v1/delete/"+id);
+return this.http.delete<any[]>(this.url+"/api/v1/delete/"+id);
 
   }
   addMyEmployee(employeeData:NgForm):Observable<any[]>{
-    return this.http.post<any[]>("http://dummy.restapiexample.com/api/v1/create",{
+    return this.http.post<any[]>(this.url+"/api/v1/create",{
       "name":employeeData.controls.name.value,
       "salary":employeeData.controls.salary.value,
       "age":employeeData.controls.age.value});
   }
 
   updateMyEmployeeDetails(data:NgForm,id:string):Observable<any[]>{
-    return this.http.put<any[]>("http://dummy.restapiexample.com/api/v1/update/"+id,
+    return this.http.put<any[]>(this.url+"/api/v1/update/"+id,
     {"name":data.controls.uname.value,"salary":data.controls.uage.value,"age":data.controls.usalary.value});
   }
 
@@ -51,7 +52,7 @@ return this.http.delete<any[]>("http://dummy.restapiexample.com/api/v1/delete/"+
     return this.flag;
   }
   setFlagValue() {
-    this.flag = 0;
+    this.flag = 1;
   }
   
 getFlagValue():number{

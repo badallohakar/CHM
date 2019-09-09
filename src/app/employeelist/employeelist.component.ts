@@ -15,12 +15,13 @@ export class EmployeelistComponent implements OnInit {
   uage:string;
   usalary:string;
   selectedEmployeeid:string;
+  
   spinneri:boolean = true;
   constructor(private employeeService:EmployeeDataServiceService,private routes:Router,private formbuilder:FormBuilder) {
     this.updateEmployee = formbuilder.group({
-      uname:[,Validators.required],
-      uage:[,Validators.required],
-      usalary:[,Validators.required]
+      uname:['',Validators.required],
+      uage:['',Validators.required],
+      usalary:['',Validators.required]
     });
    }
   employeeData:any[] = new Array();
@@ -62,24 +63,29 @@ export class EmployeelistComponent implements OnInit {
     this.flag = 1;
     this.selectedEmployeeid = data.id;
     this.employeeService.setSelectedEmployeeDetails(data);
-    this.getSelectedDataOfEmployee();
+    this.routes.navigate(['/sidebar/employeeDetails']);
     
   }
   deletethisid(id:number){
-
+    this.spinneri = true;
     if(confirm("Are you sure to delete ")) {
       this.employeeService.deleteThisId(id).subscribe((response)=>{
         this.deletestatus.push(response);
       
         if(this.deletestatus[0]["success"]["text"] == "successfully! deleted Records"){
+          
             alert("Succesfully Delete..");
             this.employeeData.splice(0, this.employeeData.length) 
             this.getEmployeeDataFromServer();
+            
         }else{
             alert("Failed To Deleted...");
+            this.spinneri = false;
         }
   
       });
+    }else{
+      this.spinneri = false;
     }
 
 
@@ -91,16 +97,19 @@ export class EmployeelistComponent implements OnInit {
   }
 
   updateData(updateEmployee:NgForm){
-   // console.log(updateEmployee);
+    console.log("f"+updateEmployee);
     this.employeeService.updateMyEmployeeDetails(updateEmployee,this.selectedEmployeeid).subscribe((response)=>{
       if(updateEmployee.controls.uname.value == response["name"]){
           alert("Employee Details Updated....");
           updateEmployee.reset();
+          
           this.employeeData.splice(0, this.employeeData.length) 
           this.getEmployeeDataFromServer();
           
+          
       }else{
-        alert("Employee Details Updated....");
+        alert("Employee Details Not Updated....");
+        
       }
 
      

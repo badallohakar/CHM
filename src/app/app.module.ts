@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { ProfileandoptionComponent } from './profileandoption/profileandoption.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
+import { EmployeePrfileComponent } from './employee-prfile/employee-prfile.component';
 
 const appRoutes:Routes=[
 {path:'login',component:LoginScreenComponent},
@@ -17,6 +18,7 @@ const appRoutes:Routes=[
   {path:'employeelist',component:EmployeelistComponent,children:[
     {path:'profile',component:ProfileandoptionComponent}
   ]},
+  {path:'employeeDetails',component:EmployeePrfileComponent},
   {path:'',redirectTo:'/sidebar',pathMatch:'full'}
 ]},
 {path:'',redirectTo:'/login',pathMatch:'full'}
@@ -28,7 +30,8 @@ const appRoutes:Routes=[
     SidebarComponent,
     EmployeelistComponent,
     ProfileandoptionComponent,
-    LoginScreenComponent
+    LoginScreenComponent,
+    EmployeePrfileComponent
   ],
   imports: [
     BrowserModule,
