@@ -83,7 +83,7 @@
                             
                               <!-- Modal footer -->
                               <div class="modal-footer">
-                                <input type="submit" [hidden]="updation" class="info" value="Add">
+                                <button type="submit" [hidden]="updation" class="info" [disabled]="!addEmployee.valid" > Add </button>
                               </div>
                             </form>
                             </div>

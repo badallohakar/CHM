@@ -50,6 +50,9 @@ export class EmployeelistComponent implements OnInit {
         this.employeeData.push(response);
         this.flag = 0;
       this.spinneri = false;
+    },err=>{
+      alert("Check Your Internet Connection...");
+      this.routes.navigate(['/sidebar']);
     });
   }else{
       this.routes.navigate(['/login']);

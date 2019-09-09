@@ -55,7 +55,7 @@ export class EmployeePrfileComponent implements OnInit {
     this.uploadingStatusText = "Please Wait Details Uploading .....";
     this.imgup = false;
     this.updation = true;
-    console.log("f"+updateEmployee.controls);
+   // console.log("f"+updateEmployee.controls);
     this.employeeService.updateMyEmployeeDetails(updateEmployee,this.selectedEmployeeid).subscribe((response)=>{
       if(updateEmployee.controls.uname.value == response["name"]){
         this.ResultEmployeeDetails["employee_name"] =response["name"];
@@ -72,6 +72,8 @@ export class EmployeePrfileComponent implements OnInit {
         alert("Employee Details Not Updated....");
         
       }
+    },err=>{
+      alert("Employee Details Not Updated....");
     });
   }
 

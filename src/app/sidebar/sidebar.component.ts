@@ -71,6 +71,11 @@ export class SidebarComponent implements OnInit {
           alert("Failed to Add Employee..");
         }
        
+    },err=>{
+      this.imgup = true;
+      this.fupload = false;
+      this.addingStatusText = "Failed To Added .....";
+      
     });
     
    

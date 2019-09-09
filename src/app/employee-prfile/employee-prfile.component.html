@@ -73,7 +73,7 @@
                         
                           <!-- Modal footer -->
                           <div class="modal-footer">
-                            <input type="submit" class="info" [hidden]="updation"  value="update">
+                            <button type="submit" class="info" [hidden]="updation" [disabled]="!updateEmployee.valid">Update</button>
                           </div>
                         </form>
                         </div>
