@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {EmployeeDataServiceService} from 'src/app/Service/employee-data-service.service';
 import { Router } from '@angular/router';
 import {FormGroup,FormControl,FormBuilder, NgForm, Validators} from '@angular/forms';
-import { empty, from, ObjectUnsubscribedError } from 'rxjs';
+import { empty, from, ObjectUnsubscribedError,Observable } from 'rxjs';
 import { interval } from 'rxjs';
-import {Observable} from 'rxjs/Rx';
+
 import { flatMap } from 'rxjs/operators';
 @Component({
   selector: 'app-sidebar',
