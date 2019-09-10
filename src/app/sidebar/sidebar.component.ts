@@ -37,13 +37,13 @@ export class SidebarComponent implements OnInit {
       salary:['',Validators.required]
     });
 
-     const secondsCounter = Observable.interval(1000*60).subscribe(n=>{
-    //  console.log(this.min +=1);
-      this.min +=1;
-      if(this.cheklogoutornot()){
-        secondsCounter.unsubscribe();
-      }
-    });
+//      const secondsCounter = Observable.interval(1000*60).subscribe(n=>{
+//     //  console.log(this.min +=1);
+//       this.min +=1;
+//       if(this.cheklogoutornot()){
+//         secondsCounter.unsubscribe();
+//       }
+//     });
     
    
   }
