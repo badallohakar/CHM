@@ -1,11 +1,10 @@
 <div class="container">
     <div *ngIf="spinneri; else elseBlock">
-      <div class="row">
-        <div class="col-md-12 text-center">
-           <img src="../../assets/loader.gif">
-        </div>
-      </div>
-    </div>
+      
+      <app-loader></app-loader>
+      <span class="text-center loaderstatus">Please Wait Data Loading...</span>
+    </div> 
+    
     <ng-template #elseBlock>
   
 <div class="row">

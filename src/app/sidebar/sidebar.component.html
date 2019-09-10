@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-md-2 menulist">
                     <ul>
-                       
+                       <span class="timeli">You Log-in :- {{min}} Min Ago</span>
                       <li  [routerLinkActive]="['active']" [routerLink]="['/sidebar/employeelist']">Employee List</li>
                       <li data-toggle="modal" data-target="#myModal" (click)="updateuvalue()">Add Employee</li>
-                      <li [routerLink]="['/login']">Log-Out</li>
+                      <li [routerLink]="['/login']" (click)="logoutme()">Log-Out</li>
                     </ul>
                 </div>
                 <div class="col-md-10 menuoutput">
@@ -31,11 +31,17 @@
                               
                               <!-- Modal body -->
                               <form [formGroup]="addEmployee" (ngSubmit)="postData(addEmployee)">
-                                  <img src="../../assets/updateloader.gif" [hidden]="imgup" class="text-center">
+                                  <div *ngIf="!imgup; else elseaddloader">
+      
+                                      <app-loader></app-loader>
+                                      <span class="text-center loaderstatus">Please Wait Data Adding...</span>
+                                    </div> 
+                                <!-- <img src="../../assets/updateloader.gif" [hidden]="imgup" class="text-center">
                                   <span [hidden]="imgup" class="upstatus">{{addingStatusText}}</span>
                                   <br>
-                                  <span [hidden]="fupload" class="upstatus1">{{addingStatusText}}</span>
-                              <div class="modal-body" [hidden]="updation">
+                                  <span [hidden]="fupload" class="upstatus1">{{addingStatusText}}</span> -->
+                                  <ng-template #elseaddloader>
+                                  <div class="modal-body" [hidden]="updation">
                                   <table class="ctable">
                                         <tr>
                                           
@@ -80,7 +86,7 @@
                                   
                                     </table>
                               </div>
-                            
+                            </ng-template>
                               <!-- Modal footer -->
                               <div class="modal-footer">
                                 <button type="submit" [hidden]="updation" class="info" [disabled]="!addEmployee.valid" > Add </button>

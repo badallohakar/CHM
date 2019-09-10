@@ -14,10 +14,11 @@ export class EmployeePrfileComponent implements OnInit {
   fupload:boolean=true;
   usalary:string;
   selectedEmployeeid:string;
-  spinneri:boolean = true;
+  
   ResultEmployeeDetails:any=new Array();
   updation:boolean = false;
   imgup:boolean = true;
+  spinneri:boolean = true;
   uploadingStatusText:string;
   deletestatus:any[] = new Array();
   constructor(private employeeService:EmployeeDataServiceService,private routes:Router,private formbuilder:FormBuilder) {
@@ -40,6 +41,7 @@ export class EmployeePrfileComponent implements OnInit {
     this.updateEmployee.get('uage').setValue(this.ResultEmployeeDetails["employee_age"]);
     this.updateEmployee.get('usalary').setValue(this.ResultEmployeeDetails["employee_salary"]);
     this.selectedEmployeeid = this.ResultEmployeeDetails["id"];
+    this.spinneri = false;
   }
 
   resetform(){

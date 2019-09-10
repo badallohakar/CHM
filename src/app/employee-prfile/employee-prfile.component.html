@@ -1,4 +1,9 @@
 <div class="container">
+    <div *ngIf="spinneri; else elseBlock">
+      
+        <app-loader></app-loader>
+    </div>
+    <ng-template #elseBlock>
     <div class="row">
         <div class="col-md-12">
             <div class="col-md-12">
@@ -17,11 +22,16 @@
                           </div>
                           <form [formGroup]="updateEmployee" (ngSubmit)="updateData(updateEmployee)">
                           <!-- Modal body -->
-                          <img src="../../assets/updateloader.gif" [hidden]="imgup" class="text-center">
+                          <div *ngIf="!imgup; else elsemloader">
+      
+                              <app-loader></app-loader>
+                              <span class="text-center loaderstatus">Please Wait Data Uploading...</span>
+                            </div> 
+                          <!-- <img src="../../assets/updateloader.gif" [hidden]="imgup" class="text-center">
                           <span [hidden]="imgup" class="upstatus">{{uploadingStatusText}}</span>
                           <br>
-                          <span [hidden]="fupload" class="upstatus1">{{uploadingStatusText}}</span>
-                         
+                          <span [hidden]="fupload" class="upstatus1">{{uploadingStatusText}}</span> -->
+                          <ng-template #elsemloader>
                           <div class="modal-body" [hidden]="updation">
                               <table class="ctable">
                                     <tr>
@@ -70,7 +80,7 @@
                               
                                 </table>
                           </div>
-                        
+                        </ng-template>
                           <!-- Modal footer -->
                           <div class="modal-footer">
                             <button type="submit" class="info" [hidden]="updation" [disabled]="!updateEmployee.valid">Update</button>
@@ -126,4 +136,5 @@
         </div>
         </div>
     </div>
+  </ng-template>
 </div>

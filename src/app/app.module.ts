@@ -11,6 +11,7 @@ import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { ProfileandoptionComponent } from './profileandoption/profileandoption.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { EmployeePrfileComponent } from './employee-prfile/employee-prfile.component';
+import { LoaderComponent } from './loader/loader.component';
 
 const appRoutes:Routes=[
 {path:'login',component:LoginScreenComponent},
@@ -31,7 +32,8 @@ const appRoutes:Routes=[
     EmployeelistComponent,
     ProfileandoptionComponent,
     LoginScreenComponent,
-    EmployeePrfileComponent
+    EmployeePrfileComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

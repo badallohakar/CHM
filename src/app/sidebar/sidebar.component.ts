@@ -2,14 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {EmployeeDataServiceService} from 'src/app/Service/employee-data-service.service';
 import { Router } from '@angular/router';
 import {FormGroup,FormControl,FormBuilder, NgForm, Validators} from '@angular/forms';
-import { empty, from } from 'rxjs';
+import { empty, from, ObjectUnsubscribedError } from 'rxjs';
 import { interval } from 'rxjs';
+import {Observable} from 'rxjs/Rx';
+import { flatMap } from 'rxjs/operators';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  
   addEmployee:FormGroup;
   name:string;
   addingStatusText:string;
@@ -22,10 +25,11 @@ export class SidebarComponent implements OnInit {
   imgup:boolean = true;
   timeLogined:any="0";
   sectime:any = "0";
-  min:number = 0;
+  min:number = 1;
   sec:number = 0;
-  
-  constructor(private employeeService:EmployeeDataServiceService,private routes:Router,private formbuilder:FormBuilder) { 
+  logoutflag:boolean=false;
+  constructor(private employeeService:EmployeeDataServiceService,private routes:Router,
+    private formbuilder:FormBuilder) { 
 
     this.addEmployee = formbuilder.group({
       name:['',Validators.required],
@@ -33,14 +37,29 @@ export class SidebarComponent implements OnInit {
       salary:['',Validators.required]
     });
 
+     const secondsCounter = Observable.interval(1000*60).subscribe(n=>{
+    //  console.log(this.min +=1);
+      this.min +=1;
+      if(this.cheklogoutornot()){
+        secondsCounter.unsubscribe();
+      }
+    });
+    
+   
   }
   createresponse:any = new Array();
-  
+  cheklogoutornot() {
+   if(this.logoutflag){
+return true;
+   }else{
+return false;
+   }
+  }
   ngOnInit() {
      
       this.checklogincreadintial();
   }
-  
+ 
   ngOnDestroy(){
     
   }
@@ -51,7 +70,10 @@ export class SidebarComponent implements OnInit {
         this.routes.navigate(['/login']);
     }
   }
-
+  logoutme(){
+    this.logoutflag = true;
+    this.routes.navigate(['/login']);
+  }
   postData(addEmployee:NgForm){
     
       this.addingStatusText = "Please Wait Details Adding .....";
